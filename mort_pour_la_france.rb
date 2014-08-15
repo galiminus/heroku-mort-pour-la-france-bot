@@ -19,7 +19,15 @@ names = [
          "vaginet",
          "pute cotte de reneville",
          "chatte",
-         "lachatte"
+         "lachatte",
+         "nique"
+         "connard",
+         "prout",
+         "tarasse",
+         "popo",
+         "gerbe",
+         "fister",
+         "fisteur"
 ]
 
 params = {
