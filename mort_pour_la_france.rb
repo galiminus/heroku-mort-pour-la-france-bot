@@ -9,11 +9,24 @@ SEARCH_URL="http://www.memoiredeshommes.sga.defense.gouv.fr/fr/arkotheque/client
 
 redis = Nest.new $0, Redis.new(:url => ENV["REDISCLOUD_URL"])
 
-names = ["caca", "boudin"]
+names = [
+         "caca",
+         "biteur",
+         "bitebiere",
+         "boudin",
+         "couille",
+         "vaginay",
+         "vaginet",
+         "pute cotte de reneville",
+         "chatte",
+         "lachatte"
+]
+
 params = {
   action: 1,
   todo: 'rechercher',
-  r_c_nom: names.sample
+  r_c_nom: names.sample,
+  r_c_nom_like: 3
 }
 
 RestClient.post(SEARCH_URL, params) do |response, request, result, &block|
@@ -31,8 +44,9 @@ RestClient.post(SEARCH_URL, params) do |response, request, result, &block|
 
       link = result.css(".visualiser a").first["href"].match(/ArkVisuImage\('(.+)'\)/)[1]
 
-      tweet = "#{firstname} #{lastname}, mort pour la France. #{link} #France #WWI"
-      p tweet
+      tweet "#{firstname} #{lastname}, mort pour la France. #{link} #France #WWI"
+
+      break
     rescue => e
       puts e
       puts e.backtrace
