@@ -20,7 +20,7 @@ names = [
          "pute cotte de reneville",
          "chatte",
          "lachatte",
-         "nique"
+         "nique",
          "connard",
          "prout",
          "tarasse",
